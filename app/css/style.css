@@ -406,40 +406,113 @@ body {
     background-size: cover; }
     body .partner .inner-container {
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      margin-top: 80px; }
     body .partner h3 {
       font-size: 50px;
-      font-size: 10vw; }
+      font-size: 3vw; }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
         body .partner h3 {
-          font-size: 76.8px; } }
+          font-size: 23.04px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
         body .partner h3 {
-          font-size: 102.4px; } }
+          font-size: 30.72px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
         body .partner h3 {
-          font-size: 32px; } }
+          font-size: 9.6px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
         body .partner h3 {
-          font-size: 48px; } }
+          font-size: 14.4px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
         body .partner h3 {
-          font-size: 32px; } }
+          font-size: 9.6px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
         body .partner h3 {
-          font-size: 56.8px; } }
+          font-size: 17.04px; } }
+    body .partner h3 + p {
+      font-size: 50px;
+      font-size: 1.8vw;
+      line-height: 2; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        body .partner h3 + p {
+          font-size: 13.824px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        body .partner h3 + p {
+          font-size: 18.432px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+        body .partner h3 + p {
+          font-size: 5.76px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+        body .partner h3 + p {
+          font-size: 8.64px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+        body .partner h3 + p {
+          font-size: 5.76px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+        body .partner h3 + p {
+          font-size: 10.224px; } }
+    body .partner h5 {
+      color: #00538a;
+      font-size: 1.6vw;
+      line-height: 2; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        body .partner h5 {
+          font-size: 12.288px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        body .partner h5 {
+          font-size: 16.384px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+        body .partner h5 {
+          font-size: 5.12px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+        body .partner h5 {
+          font-size: 7.68px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+        body .partner h5 {
+          font-size: 5.12px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+        body .partner h5 {
+          font-size: 9.088px; } }
     body .partner h3, body .partner p {
       text-align: center;
       color: #ffffff; }
     body .partner .card {
       background: #ffffff;
-      width: 30%; }
+      width: 32%; }
       body .partner .card img {
         display: block;
         max-width: 100%; }
       body .partner .card .wrap {
-        padding: 20px 78px; }
-      body .partner .card p {
+        padding: 20px 40px 50px; }
+      body .partner .card p, body .partner .card blockquote {
         color: #727271;
-        line-height: 1.4;
+        line-height: 2;
         text-align: left; }
+      body .partner .card blockquote {
+        padding-top: 40px;
+        margin-top: 40px;
+        position: relative; }
+        body .partner .card blockquote::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          content: '';
+          width: 40px;
+          height: 2px;
+          background: #00538a;
+          border-radius: 2px; }
+        body .partner .card blockquote .author {
+          font-weight: bold; }
+        body .partner .card blockquote.blue:after {
+          background: #00538a; }
+        body .partner .card blockquote.blue .author {
+          color: #00538a; }
+        body .partner .card blockquote.orange:after {
+          background: #f4a71c; }
+        body .partner .card blockquote.orange .author {
+          color: #f4a71c; }
+        body .partner .card blockquote.purple:after {
+          background: #621e66; }
+        body .partner .card blockquote.purple .author {
+          color: #621e66; }

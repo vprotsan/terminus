@@ -348,11 +348,24 @@ body {
         .inner-container {
             display: flex;
             justify-content: space-between;
+            margin-top: 80px;
         }
 
         h3 {
             font-size: 50px;
-            @include viewport-unit(font-size, 10vw);
+            @include viewport-unit(font-size, 3vw);
+        }
+
+        h3 + p {
+            font-size: 50px;
+            @include viewport-unit(font-size, 1.8vw);
+            line-height: 2;
+        }
+
+        h5 {
+            color: $blue;
+            @include viewport-unit(font-size, 1.6vw);
+            line-height: 2;
         }
 
         h3, p {
@@ -362,7 +375,7 @@ body {
 
         .card {
             background: #ffffff;
-            width: 30%;
+            width: 32%;
 
             img {
                 display: block;
@@ -370,13 +383,67 @@ body {
             }
 
             .wrap {
-                padding: 20px 78px;
+                padding: 20px 40px 50px;
             }
 
-            p {
+            p, blockquote {
                 color: $main;
-                line-height: 1.4;
+                line-height: 2;
                 text-align: left;
+            }
+
+            blockquote {
+                padding-top: 40px;
+                margin-top: 40px;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    content: '';
+                    width: 40px;
+                    height: 2px;
+                    background: $blue;
+                    border-radius: 2px;
+                }
+
+                .author {
+                    font-weight: bold;
+                }
+
+                &.blue {
+                    &:after {
+                        background: $blue;
+                    }
+
+                    .author {
+                        color: $blue;
+                    }
+                }
+
+                &.orange {
+
+                    &:after {
+                        background: $orange-text;
+                    }
+
+                    .author {
+                        color: $orange-text;
+                    }
+                }
+
+                &.purple {
+
+                    &:after {
+                        background: $purple;
+                    }
+
+                    .author {
+                        color: $purple;
+                    }
+                }
             }
         }
     }
