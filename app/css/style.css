@@ -52,6 +52,26 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/**
+ * Fix for vw, vh, vmin, vmax on iOS 7.
+ * http://caniuse.com/#feat=viewport-units
+ *
+ * This fix works by replacing viewport units with px values on known screen sizes.
+ *
+ * iPhone 6 and 6 Plus cannot run iOS 7, so are not targeted by this fix.
+ * Target devices running iOS 8+ will incidentally execute the media query,
+ * but this will still produce the expected result; so this is not a problem.
+ *
+ * As an example, replace:
+ *
+ *   height: 50vh;
+ *   font-size: 5vmin;
+ *
+ * with:
+ *
+ *   @include viewport-unit(height, 50vh);
+ *   @include viewport-unit(font-size, 5vmin);
+ */
 body {
   height: 100%;
   position: relative;
@@ -68,6 +88,7 @@ body {
   body .button {
     display: block;
     font-weight: bold;
+    border-radius: 2px;
     font-size: 18px;
     color: #ffffff;
     line-height: 1;
@@ -81,11 +102,16 @@ body {
     text-align: center;
     padding: 25px 65px; }
     body .button:hover {
+      color: #ffffff;
       text-decoration: none; }
     body .button.green {
       background: #97c93c; }
       body .button.green:hover {
         background: #89b833; }
+    body .button.orange {
+      background: #f4a71c; }
+      body .button.orange:hover {
+        background: #eb9b0b; }
   body header {
     display: flex;
     justify-content: space-around;
@@ -96,6 +122,23 @@ body {
     body header .nav-wrapper,
     body header .main-nav {
       display: flex; }
+    body header .additional-nav {
+      margin-left: 10vw; }
+      body header .additional-nav .menu li {
+        padding: 0; }
+        body header .additional-nav .menu li a:hover {
+          color: #ffffff; }
+        body header .additional-nav .menu li.search {
+          background: url("../images/header/searchicon.png") no-repeat;
+          width: 16px;
+          height: 16px; }
+      body header .additional-nav .menu li:nth-child(2) {
+        padding: 0 30px; }
+      body header .additional-nav .button {
+        padding: 15px 22px;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 800; }
     body header .menu {
       display: flex;
       align-items: center; }
@@ -160,5 +203,243 @@ body {
       body .companies .outer-container div img {
         display: block;
         max-width: 100%; }
-  body .featured .outer-container div:first-child {
-    background: url(../images/); }
+  body .featured {
+    margin-top: 130px; }
+    body .featured .outer-container {
+      display: flex; }
+      body .featured .outer-container > div {
+        width: 50%;
+        padding: 115px 122px;
+        background-size: cover; }
+        body .featured .outer-container > div p {
+          text-transform: uppercase;
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 600;
+          padding-bottom: 20px;
+          position: relative; }
+          body .featured .outer-container > div p::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            content: '';
+            width: 43px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: #f4a71c; }
+        body .featured .outer-container > div h2 {
+          font-size: 30px;
+          color: #ffffff;
+          padding: 40px 0;
+          line-height: 1.2; }
+          body .featured .outer-container > div h2 span {
+            font-size: 44px;
+            font-weight: 800; }
+      body .featured .outer-container div:first-child {
+        background: url("../images/images/account-based-advertising.jpg") no-repeat;
+        margin-right: 12px; }
+      body .featured .outer-container div:nth-child(2) {
+        background: url("../images/images/account-based-analytics.jpg") no-repeat;
+        margin-left: 12px; }
+      body .featured .outer-container .button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 14px; }
+  body .journey {
+    margin-top: 30px; }
+    body .journey h3 {
+      color: #00538a;
+      text-align: center;
+      line-height: 1.2;
+      font-size: 3vw; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        body .journey h3 {
+          font-size: 23.04px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        body .journey h3 {
+          font-size: 30.72px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+        body .journey h3 {
+          font-size: 9.6px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+        body .journey h3 {
+          font-size: 14.4px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+        body .journey h3 {
+          font-size: 9.6px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+        body .journey h3 {
+          font-size: 17.04px; } }
+    body .journey .button {
+      margin: 60px auto 115px;
+      max-width: 280px; }
+    body .journey .wrapper {
+      display: flex;
+      justify-content: space-around; }
+      body .journey .wrapper div.col {
+        width: 30%; }
+        body .journey .wrapper div.col.left h4, body .journey .wrapper div.col.left p {
+          text-align: right; }
+        body .journey .wrapper div.col.left .item {
+          float: right; }
+        body .journey .wrapper div.col.left .item:first-child {
+          margin-top: 10vw;
+          margin-top: 10vw; }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+            body .journey .wrapper div.col.left .item:first-child {
+              margin-top: 76.8px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+            body .journey .wrapper div.col.left .item:first-child {
+              margin-top: 102.4px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+            body .journey .wrapper div.col.left .item:first-child {
+              margin-top: 32px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+            body .journey .wrapper div.col.left .item:first-child {
+              margin-top: 48px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+            body .journey .wrapper div.col.left .item:first-child {
+              margin-top: 32px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+            body .journey .wrapper div.col.left .item:first-child {
+              margin-top: 56.8px; } }
+        body .journey .wrapper div.col.left .item:nth-child(2) {
+          margin-top: 11vw;
+          margin-top: 11vw; }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+            body .journey .wrapper div.col.left .item:nth-child(2) {
+              margin-top: 84.48px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+            body .journey .wrapper div.col.left .item:nth-child(2) {
+              margin-top: 112.64px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+            body .journey .wrapper div.col.left .item:nth-child(2) {
+              margin-top: 35.2px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+            body .journey .wrapper div.col.left .item:nth-child(2) {
+              margin-top: 52.8px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+            body .journey .wrapper div.col.left .item:nth-child(2) {
+              margin-top: 35.2px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+            body .journey .wrapper div.col.left .item:nth-child(2) {
+              margin-top: 62.48px; } }
+        body .journey .wrapper div.col.right h4, body .journey .wrapper div.col.right p {
+          text-align: left; }
+        body .journey .wrapper div.col.right .item {
+          float: left; }
+        body .journey .wrapper div.col.right .item:nth-child(2) {
+          margin-top: 5vw;
+          margin-top: 5vw; }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+            body .journey .wrapper div.col.right .item:nth-child(2) {
+              margin-top: 38.4px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+            body .journey .wrapper div.col.right .item:nth-child(2) {
+              margin-top: 51.2px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+            body .journey .wrapper div.col.right .item:nth-child(2) {
+              margin-top: 16px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+            body .journey .wrapper div.col.right .item:nth-child(2) {
+              margin-top: 24px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+            body .journey .wrapper div.col.right .item:nth-child(2) {
+              margin-top: 16px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+            body .journey .wrapper div.col.right .item:nth-child(2) {
+              margin-top: 28.4px; } }
+        body .journey .wrapper div.col.right .item:nth-child(3) {
+          margin-top: 10vw;
+          margin-top: 10vw; }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+            body .journey .wrapper div.col.right .item:nth-child(3) {
+              margin-top: 76.8px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+            body .journey .wrapper div.col.right .item:nth-child(3) {
+              margin-top: 102.4px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+            body .journey .wrapper div.col.right .item:nth-child(3) {
+              margin-top: 32px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+            body .journey .wrapper div.col.right .item:nth-child(3) {
+              margin-top: 48px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+            body .journey .wrapper div.col.right .item:nth-child(3) {
+              margin-top: 32px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+            body .journey .wrapper div.col.right .item:nth-child(3) {
+              margin-top: 56.8px; } }
+        body .journey .wrapper div.col.center img {
+          max-width: 100%; }
+      body .journey .wrapper .item {
+        width: 90%; }
+        body .journey .wrapper .item h4 {
+          color: #00538a;
+          line-height: 1.2;
+          font-size: 29px;
+          font-size: 1.7vw; }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+            body .journey .wrapper .item h4 {
+              font-size: 13.056px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+            body .journey .wrapper .item h4 {
+              font-size: 17.408px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+            body .journey .wrapper .item h4 {
+              font-size: 5.44px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+            body .journey .wrapper .item h4 {
+              font-size: 8.16px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+            body .journey .wrapper .item h4 {
+              font-size: 5.44px; } }
+          @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+            body .journey .wrapper .item h4 {
+              font-size: 9.656px; } }
+        body .journey .wrapper .item p {
+          line-height: 1.6; }
+  body .partner {
+    padding: 125px 0 140px;
+    background: url("../images/section/bg_16.jpg") no-repeat;
+    background-size: cover; }
+    body .partner .inner-container {
+      display: flex;
+      justify-content: space-between; }
+    body .partner h3 {
+      font-size: 50px;
+      font-size: 10vw; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        body .partner h3 {
+          font-size: 76.8px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        body .partner h3 {
+          font-size: 102.4px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+        body .partner h3 {
+          font-size: 32px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+        body .partner h3 {
+          font-size: 48px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+        body .partner h3 {
+          font-size: 32px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+        body .partner h3 {
+          font-size: 56.8px; } }
+    body .partner h3, body .partner p {
+      text-align: center;
+      color: #ffffff; }
+    body .partner .card {
+      background: #ffffff;
+      width: 30%; }
+      body .partner .card img {
+        display: block;
+        max-width: 100%; }
+      body .partner .card .wrap {
+        padding: 20px 78px; }
+      body .partner .card p {
+        color: #727271;
+        line-height: 1.4;
+        text-align: left; }

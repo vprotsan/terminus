@@ -13,6 +13,7 @@ body {
     .button {
         display: block;
         font-weight: bold;
+        border-radius: 2px;
         font-size: 18px;
         color: #ffffff;
         line-height: 1;
@@ -23,6 +24,7 @@ body {
         padding: 25px 65px;
 
         &:hover {
+            color: #ffffff;
             text-decoration: none;
         }
 
@@ -31,6 +33,14 @@ body {
 
             &:hover {
                 background: darken($bright-green, 5%);
+            }
+        }
+
+        &.orange {
+            background: $orange;
+
+            &:hover {
+                background: darken($orange, 5%);
             }
         }
     }
@@ -50,6 +60,39 @@ body {
       .nav-wrapper,
       .main-nav {
           display: flex;
+      }
+
+      .additional-nav {
+          margin-left: 10vw;
+
+          .menu {
+              li {
+                  padding: 0;
+
+                  a {
+                      &:hover {
+                          color: #ffffff;
+                      }
+                  }
+
+                  &.search {
+                      background: url('../images/header/searchicon.png') no-repeat;
+                      width: 16px;
+                      height: 16px;
+                  }
+              }
+
+              li:nth-child(2) {
+                  padding: 0 30px;
+              }
+          }
+
+          .button {
+                padding: 15px 22px;
+                font-size: 14px;
+                color: #ffffff;
+                font-weight: 800;
+          }
       }
 
       .menu {
@@ -150,10 +193,192 @@ body {
         }
     }
     .featured {
+        margin-top: 130px;
+
         .outer-container {
+            display: flex;
+
+            &> div {
+                width: 50%;
+                padding: 115px 122px;
+                background-size: cover;
+
+                p {
+                    text-transform: uppercase;
+                    color: #ffffff;
+                    font-size: 16px;
+                    font-weight: 600;
+                    padding-bottom: 20px;
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        display: block;
+                        content: '';
+                        width: 43px;
+                        height: 2px;
+                        border-radius: 2px;
+                        background-color: $orange;
+                    }
+                }
+
+                h2 {
+                    font-size: 30px;
+                    color: #ffffff;
+                    padding: 40px 0;
+                    line-height: 1.2;
+
+                    span {
+                        font-size: 44px;
+                        font-weight: 800;
+                    }
+                }
+            }
+
             div:first-child {
-                background: url(../images/)
+                background: url('../images/images/account-based-advertising.jpg') no-repeat;
+                margin-right: 12px;
+            }
+
+            div:nth-child(2) {
+                background: url('../images/images/account-based-analytics.jpg') no-repeat;
+                margin-left: 12px;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 15px 30px;
+                font-size: 14px;
             }
         }
     }
+    .journey {
+        margin-top: 30px;
+
+        h3 {
+            color: $blue;
+            // font-size: 50px;
+            text-align: center;
+            line-height: 1.2;
+            @include viewport-unit(font-size, 3vw);
+        }
+
+        .button {
+            margin: 60px auto 115px;
+            max-width: 280px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-around;
+
+            div.col {
+                width: 30%;
+
+                &.left {
+                    h4, p {
+                        text-align: right;
+                    }
+
+                    .item {
+                        float:right;
+                    }
+
+                    .item:first-child {
+                        margin-top: 10vw;
+                        @include viewport-unit(margin-top, 10vw);
+                    }
+
+                    .item:nth-child(2){
+                        margin-top: 11vw;
+                        @include viewport-unit(margin-top, 11vw);
+                    }
+                }
+
+                &.right {
+                    h4, p {
+                        text-align: left;
+                    }
+
+                    .item {
+                        float:left;
+                    }
+
+                    .item:nth-child(2){
+                        margin-top: 5vw;
+                        @include viewport-unit(margin-top, 5vw);
+                    }
+
+                    .item:nth-child(3){
+                        margin-top: 10vw;
+                        @include viewport-unit(margin-top, 10vw);
+                    }
+                }
+
+                &.center {
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .item {
+                width: 90%;
+
+                h4 {
+                    color: $blue;
+                    line-height: 1.2;
+                    font-size: 29px;
+                    @include viewport-unit(font-size, 1.7vw);
+                }
+
+                p {
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+    .partner {
+        padding: 125px 0 140px;
+        background: url('../images/section/bg_16.jpg') no-repeat;
+        background-size: cover;
+
+        .inner-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-size: 50px;
+            @include viewport-unit(font-size, 10vw);
+        }
+
+        h3, p {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 30%;
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+
+            .wrap {
+                padding: 20px 78px;
+            }
+
+            p {
+                color: $main;
+                line-height: 1.4;
+                text-align: left;
+            }
+        }
+    }
+
 }
