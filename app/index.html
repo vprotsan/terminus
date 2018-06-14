@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" href="favicon.ico" type="image/ico">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
     <!-- build:css css/combined.css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -28,18 +28,18 @@
 </head>
 <body class="terminus">
   <header>
-    <img src="images/header/logo.png" alt="Terminus logo" />
+    <img class="logo" src="images/header/logo.png" alt="Terminus logo" />
     <div class="nav-wrapper">
       <nav class="main-nav">
-        <ul>
-          <li><a href="#">Products</a>
+        <ul class="menu">
+          <li class="has-children blue"><a href="#">Products</a>
             <ul class="dropdown">
               <li><a href="#">Dropdown link1</a></li>
               <li><a href="#">Dropdown link2</a></li>
               <li><a href="#">Dropdown link3</a></li>
             </ul>
           </li>
-          <li><a href="#">Resources</a>
+          <li class="has-children green"><a href="#">Resources</a>
             <ul class="dropdown">
               <li><a href="#">Dropdown link1</a></li>
               <li><a href="#">Dropdown link2</a></li>
@@ -47,7 +47,7 @@
             </ul>
           </li>
           <li><a href="#">Customers</a></li>
-          <li><a href="#">Company</a>
+          <li class="has-children orange"><a href="#">Company</a>
             <ul class="dropdown">
               <li><a href="#">Dropdown link1</a></li>
               <li><a href="#">Dropdown link2</a></li>
@@ -63,7 +63,7 @@
           <li><a href="#">Sign in</a></li>
           <li><a href="#">Request a demo</a></li>
           <li class="search">
-            <form action="#" type="GET">
+            <form action="#" type="GET" class="search-form">
               <input type="text" placeholder="Search..." />
             </form>
           </li>
@@ -72,39 +72,38 @@
     </div>
   </header>
   <section class="jumbothrone">
-    <h1>Unlock Efficient Revenue Growth <br>
+    <h1><span>Unlock Efficient Revenue Growth </span><br>
       with the ABM Platform B2B Marketers Love
     </h1>
     <a href="#" class="button green">learn more</a>
   </section>
   <section class="companies">
-    <div class="logo">
-      <img src="#" alt="#" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo1.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo3.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo4.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo7.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo8.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo2.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo5.png" alt="images/logos/logo" />
-    </div>
-    <div class="logo">
-      <img src="images/logos/logo6.png" alt="images/logos/logo" />
-    </div>
+    <div class="outer-container">
+        <div class="logo">
+          <img src="images/logos/logo1.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo3.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo4.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo7.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo8.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo2.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo5.png" alt="images/logos/logo" />
+        </div>
+        <div class="logo">
+          <img src="images/logos/logo6.png" alt="images/logos/logo" />
+        </div>
+      </div>
   </section>
   <section class="featured">
     <div class="outer-container">

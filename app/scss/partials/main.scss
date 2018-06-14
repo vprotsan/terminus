@@ -1,13 +1,159 @@
 body {
     height: 100%;
     position: relative;
+    @include body-font;
+
+    ///common styles
+
+    .outer-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .button {
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        color: #ffffff;
+        line-height: 1;
+        max-width: 270px;
+        @include transition(all 0.2s linear);
+        text-transform: uppercase;
+        text-align: center;
+        padding: 25px 65px;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &.green {
+            background: $bright-green;
+
+            &:hover {
+                background: darken($bright-green, 5%);
+            }
+        }
+    }
+
+    //end common styles
 
     header {
       display: flex;
+      justify-content: space-around;
+      margin: 30px 0 34px;
 
+      .logo {
+          display: block;
+          max-width: 160px;
+      }
+
+      .nav-wrapper,
       .main-nav {
           display: flex;
       }
-    }
 
+      .menu {
+          display: flex;
+          align-items: center;
+
+          li {
+              padding: 0 25px;
+
+              @include mq('monitor'){
+                  padding: 0 30px;
+              }
+
+              a {
+                  color: $main;
+                  text-transform: uppercase;
+                  font-weight: 600;
+                  @include transition(all 0.2s linear);
+
+                  &:hover {
+                      text-decoration: none;
+                      color: darken($main, 10%);
+                  }
+              }
+          }
+      }
+
+      .has-children {
+          position: relative;
+
+          &.blue {
+              background: url(../images/header/1_06.png) no-repeat;
+              background-position: 100% 50%;
+          }
+
+          &.green {
+              background: url(../images/header/1_08.png) no-repeat;
+              background-position: 100% 50%;
+          }
+
+          &.orange {
+              background: url(../images/header/1_10.png) no-repeat;
+              background-position: 100% 50%;
+          }
+
+          .dropdown {
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              &.active {
+                  display: block;
+              }
+          }
+      }
+
+      .search-form {
+          display: none;
+      }
+    }
+    .jumbothrone {
+        background: url(../images/images/jumbothrone.jpg) no-repeat;
+        background-size: cover;
+        padding: 235px 0 295px;
+
+        h1 {
+            color: #ffffff;
+            font-size: 40px;
+            line-height: 1.4;
+            text-align: center;
+
+            span {
+                font-weight: 800;
+            }
+        }
+
+        .button {
+            margin: 65px auto 0;
+            max-width: 268px;
+        }
+    }
+    .companies {
+        background: $light-grey;
+        padding: 48px 0;
+
+        .outer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div {
+                img {
+                    display: block;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    .featured {
+        .outer-container {
+            div:first-child {
+                background: url(../images/)
+            }
+        }
+    }
 }

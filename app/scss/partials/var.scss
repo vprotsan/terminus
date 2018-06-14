@@ -9,11 +9,11 @@ $dark-blue: #0098ce;
 $orange-text: $orange;
 $purple: #621e66;
 
-
-
+//fonts
+$body-font: 'Open Sans', sans-serif;
 
 @mixin body-font{
-	color: $body-font-color;
+	color: $main;
 	font-family: $body-font;
 	font-size: 14px;
 	font-weight: normal;
