@@ -84,7 +84,8 @@ body {
   -moz-osx-font-smoothing: grayscale; }
   body .outer-container {
     width: 90%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    max-width: 1440px; }
   body .button {
     display: block;
     font-weight: bold;
@@ -250,6 +251,8 @@ body {
     margin-top: 30px; }
     body .journey h3 {
       color: #00538a;
+      font-weight: bold;
+      margin-bottom: 50px;
       text-align: center;
       line-height: 1.2;
       font-size: 3vw; }
@@ -372,13 +375,15 @@ body {
             body .journey .wrapper div.col.right .item:nth-child(3) {
               margin-top: 56.8px; } }
         body .journey .wrapper div.col.center img {
-          max-width: 100%; }
+          max-width: 100%;
+          height: 100vh; }
       body .journey .wrapper .item {
-        width: 90%; }
+        width: 95%; }
         body .journey .wrapper .item h4 {
           color: #00538a;
           line-height: 1.2;
           font-size: 29px;
+          margin-bottom: 20px;
           font-size: 1.7vw; }
           @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
             body .journey .wrapper .item h4 {
@@ -410,6 +415,7 @@ body {
       margin-top: 80px; }
     body .partner h3 {
       font-size: 50px;
+      font-weight: bold;
       font-size: 3vw; }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
         body .partner h3 {
@@ -454,7 +460,8 @@ body {
     body .partner h5 {
       color: #00538a;
       font-size: 1.6vw;
-      line-height: 2; }
+      line-height: 2;
+      padding-bottom: 6px; }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
         body .partner h5 {
           font-size: 12.288px; } }
@@ -516,3 +523,74 @@ body {
           background: #621e66; }
         body .partner .card blockquote.purple .author {
           color: #621e66; }
+  body .akamai {
+    padding: 100px 0 120px; }
+    body .akamai .outer-container {
+      display: flex; }
+      body .akamai .outer-container > div:first-child {
+        width: 60%; }
+        body .akamai .outer-container > div:first-child img {
+          max-width: 220px; }
+      body .akamai .outer-container > div:nth-child(2) {
+        width: 40%; }
+        body .akamai .outer-container > div:nth-child(2) img {
+          width: 100%;
+          display: block;
+          max-width: 586px; }
+      body .akamai .outer-container h5 {
+        color: #00538a;
+        font-size: 30px;
+        margin-top: 30px; }
+      body .akamai .outer-container blockquote {
+        position: relative;
+        font-style: italic;
+        line-height: 2;
+        font-size: 24px;
+        margin-top: 40px;
+        padding-top: 40px;
+        width: 80%; }
+        body .akamai .outer-container blockquote::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          content: '';
+          width: 40px;
+          height: 2px;
+          border-radius: 2px;
+          background: #0098ce; }
+        body .akamai .outer-container blockquote .author {
+          color: #0098ce;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          padding-top: 35px;
+          padding-bottom: 60px; }
+      body .akamai .outer-container .button {
+        padding: 15px 20px;
+        max-width: 322px; }
+      body .akamai .outer-container .inner-container {
+        display: flex; }
+  body .funnel {
+    background: url("../images/section/abm.jpg") no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 110px 0 120px; }
+    body .funnel .outer-container h5 {
+      font-size: 36px;
+      line-height: 2; }
+      body .funnel .outer-container h5 span {
+        font-weight: bold; }
+    body .funnel .outer-container p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      width: 80%;
+      font-size: 18px; }
+    body .funnel .outer-container > p:first-child {
+      color: #f4a71c;
+      font-weight: bold;
+      text-transform: uppercase; }
+    body .funnel .button {
+      padding: 15px 20px;
+      max-width: 300px;
+      line-height: 1; }

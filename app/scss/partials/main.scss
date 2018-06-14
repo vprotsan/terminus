@@ -8,6 +8,7 @@ body {
     .outer-container {
         width: 90%;
         margin: 0 auto;
+        max-width: 1440px;
     }
 
     .button {
@@ -260,6 +261,8 @@ body {
         h3 {
             color: $blue;
             // font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 50px;
             text-align: center;
             line-height: 1.2;
             @include viewport-unit(font-size, 3vw);
@@ -320,17 +323,19 @@ body {
                 &.center {
                     img {
                         max-width: 100%;
+                        height: 100vh;
                     }
                 }
             }
 
             .item {
-                width: 90%;
+                width: 95%;
 
                 h4 {
                     color: $blue;
                     line-height: 1.2;
                     font-size: 29px;
+                    margin-bottom: 20px;
                     @include viewport-unit(font-size, 1.7vw);
                 }
 
@@ -353,6 +358,7 @@ body {
 
         h3 {
             font-size: 50px;
+            font-weight: bold;
             @include viewport-unit(font-size, 3vw);
         }
 
@@ -366,6 +372,7 @@ body {
             color: $blue;
             @include viewport-unit(font-size, 1.6vw);
             line-height: 2;
+            padding-bottom: 6px;
         }
 
         h3, p {
@@ -445,6 +452,113 @@ body {
                     }
                 }
             }
+        }
+    }
+    .akamai {
+        padding: 100px 0 120px;
+
+        .outer-container {
+            display: flex;
+
+            & > div:first-child {
+                width: 60%;
+                img {
+                    max-width: 220px;
+                }
+            }
+
+            & > div:nth-child(2){
+
+                width: 40%;
+                img {
+                    width: 100%;
+                    display: block;
+                    max-width: 586px;
+                }
+            }
+
+            h5 {
+                color: $blue;
+                font-size: 30px;
+                margin-top: 30px;
+            }
+
+            blockquote {
+                position: relative;
+                font-style: italic;
+                line-height: 2;
+                font-size: 24px;
+                margin-top: 40px;
+                padding-top: 40px;
+                width: 80%;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    content: '';
+                    width: 40px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: $dark-blue;
+                }
+
+                .author {
+                    color: $dark-blue;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 18px;
+                    padding-top: 35px;
+                    padding-bottom: 60px;
+                }
+
+            }
+
+            .button {
+                padding: 15px 20px;
+                max-width: 322px;
+            }
+
+            .inner-container {
+                display: flex;
+            }
+        }
+    }
+    .funnel {
+        background: url('../images/section/abm.jpg') no-repeat;
+        background-size: cover;
+        color: #ffffff;
+        padding: 110px 0 120px;
+
+        .outer-container {
+            h5 {
+                font-size: 36px;
+                line-height: 2;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            p {
+                line-height: 1.8;
+                margin-bottom: 20px;
+                width: 80%;
+                font-size: 18px;
+            }
+        }
+
+        .outer-container > p:first-child {
+            color: $orange-text;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .button {
+            padding: 15px 20px;
+            max-width: 300px;
+            line-height: 1;
         }
     }
 
