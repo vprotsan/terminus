@@ -1,0 +1,13 @@
+body {
+    height: 100%;
+    position: relative;
+
+    header {
+      display: flex;
+
+      .main-nav {
+          display: flex;
+      }
+    }
+
+}
